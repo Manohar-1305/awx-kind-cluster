@@ -8,6 +8,7 @@ git checkout tags/2.19.1
 make deploy
 
 - Deploy AWX Instance
+```sh
 cat <<EOF | kubectl apply -f -
 apiVersion: awx.ansible.com/v1beta1
 kind: AWX
@@ -20,6 +21,7 @@ spec:
   hostname: awx.local
   projects_persistence: false
 EOF
+```
 
 
 kubectl get pods -n awx -w
